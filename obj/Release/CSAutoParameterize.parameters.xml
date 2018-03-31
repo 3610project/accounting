@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-hsUserView-20170302101743.mdf;Initial Catalog=aspnet-hsUserView-20170302101743;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Zetian\\Documents\\Visual\ Studio\ 2015\\Projects\\hsUserView\\hsUserView\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="vShearthstoneConnectionString-Web.config Connection String" description="vShearthstoneConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=osuwzt.database.windows.net;Initial Catalog=vShearthstone;User ID=osuwzt;Password=wzt1210X" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Zetian\\Documents\\Visual\ Studio\ 2015\\Projects\\hsUserView\\hsUserView\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='vShearthstoneConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
