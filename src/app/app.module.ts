@@ -2,32 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
-
-
 import { AppComponent } from './app.component';
-import { BooksComponent } from './books/books.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
 import { HomeComponent } from './home/home.component';
 import { OrdersComponent } from './orders/orders.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouterModule } from './router/router.module';
-import { BooksService } from './books/books.service';
+import { TransactionsService } from './view-all-transaction/transaction.service';
 import { LoginComponent } from './login/login.component';
+import { AddTransasctionComponent } from './add-transasction/add-transasction.component';
+import { ViewAllTransactionComponent } from './view-all-transaction/view-all-transaction.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent,
-    BookDetailComponent,
     HomeComponent,
     OrdersComponent,
     NavBarComponent,
     FooterComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    AddTransasctionComponent,
+    ViewAllTransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +33,7 @@ import { LoginComponent } from './login/login.component';
     AppRouterModule,
     HttpClientModule
   ],
-  providers: [BooksService],
+  providers: [TransactionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
