@@ -1,0 +1,6 @@
+<h2>View All Transactions</h2>
+<ul class="books">
+  <li *ngFor="let transaction of transactions" [class.selected]="transaction === selectedTransaction" (click)="onSelect(transaction)">
+    <span class="span">{{transaction.id}}</span> {{transaction.vendor}}
+  </li>
+</ul>
