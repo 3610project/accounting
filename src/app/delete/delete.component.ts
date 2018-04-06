@@ -1,12 +1,14 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ITransaction } from '../transaction';
-import { TransactionsService } from '../transaction.service';
+import { ITransaction } from '../view-all-transaction/transaction';
+import { TransactionsService } from '../view-all-transaction/transaction.service';
+
 
 @Component({
   selector: 'delete',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.css']
+
 })
 
 export class DeleteComponent implements OnInit {
@@ -32,7 +34,9 @@ i
    
     this.transactionservice.deletetransaction(transaction).subscribe();
   }
-
+  get(transactions: ITransaction):void{
+    this._transactionsService.getTransactions().subscribe(transactions=>this.transactions =transactions);
+  }
 
 
 
