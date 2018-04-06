@@ -9,7 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouterModule } from './/router.module';
-import { TransactionsService } from './view-all-transaction/transaction.service';
+import { TransactionsService } from './transaction.service';
 import { LoginComponent } from './login/login.component';
 import { AddTransasctionComponent } from './add-transasction/add-transasction.component';
 import { ViewAllTransactionComponent } from './view-all-transaction/view-all-transaction.component';

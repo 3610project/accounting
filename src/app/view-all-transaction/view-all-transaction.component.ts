@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ITransaction } from '../view-all-transaction/transaction';
-import { TransactionsService } from '../view-all-transaction/transaction.service';
+import { ITransaction } from '../transaction';
+import { TransactionsService } from '../transaction.service';
 
 @Component({
   selector: 'app-view-all-transaction',
@@ -13,7 +13,7 @@ export class ViewAllTransactionComponent implements OnInit {
   selectedTransaction: ITransaction;
 
   constructor(private _transactionsService: TransactionsService){ }
-
+i
   ngOnInit(){
     this._transactionsService.getTransactions().subscribe(transactions => {
       this.transactions = transactions;
