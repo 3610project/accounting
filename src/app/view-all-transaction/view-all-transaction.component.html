@@ -1,6 +1,19 @@
 <h2>View All Transactions</h2>
 <ul class="books">
   <li *ngFor="let transaction of transactions" [class.selected]="transaction === selectedTransaction" (click)="onSelect(transaction)">
-    <span class="span">{{transaction.id}}</span> {{transaction.vendor}}
+    <span class="span">{{transaction.id}}</span> {{transaction.vendor}} {{transaction.amount}} {{transaction.category}} {{transaction.TransactionDate}} {{transaction.account}}
   </li>
 </ul>
+<table>
+<th>ID</th>
+<th>VENDOR</th> 
+<th>AMOUNT</th>
+</table>
+
+<table *ngFor="let transaction of transactions">
+  <tr ng-repeat="transaction in names">
+    <td>{{transaction.id}}</td>
+    <td>{{transaction.vendor}}</td> 
+    <td>{{transaction.amount}}</td>
+  </tr>
+</table>
