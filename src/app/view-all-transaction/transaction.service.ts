@@ -6,7 +6,7 @@ import { ITransaction } from './transaction';
 @Injectable()
 export class TransactionsService {
 
-  private transactionsUrl = 'http://localhost:5000/api/transactions';
+  private transactionsUrl = 'https://mrsawada-accounting-api.azurewebsites.net/api/transactions';
 
   constructor( private _http: HttpClient) { }
 
