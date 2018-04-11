@@ -27,7 +27,9 @@ export class AddTransasctionComponent implements OnInit {
   AddTransaction() {
     
     var date = new Date(2018,4,1);
-        const newTransaction : ITransaction = {id: this.inputid.value, vendor: "Test", amount: 0, category: "Test", transactionDate: date, account: "Test"};
+    var myid : number;
+    myid = this.inputid.value;
+    const newTransaction : ITransaction = {id: myid, vendor: "Test", amount: 0, category: "Test", transactionDate: date, account: "Test"};
     this._transactionsService.postTransaction(newTransaction)
     .subscribe(transaction => this.transactions.push(newTransaction));
   }
