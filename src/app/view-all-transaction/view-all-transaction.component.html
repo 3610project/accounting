@@ -3,22 +3,29 @@
 <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">  
     <h2>View All Transactions</h2></div>
 
-<table>
-<th>ID</th>
-<th>VENDOR</th> 
-<th>AMOUNT</th>
-<th>ACCOUNT</th>
-<th>DATE</th>
-<th>CATEGORY</th>
-</table>
-
-<table *ngFor="let transaction of transactions">
-  <tr ng-repeat="transaction in names">
+<div class="w3-container">
+<table class="w3-table-all" >
+<tr>
+  <th>ID</th>
+  <th>VENDOR</th> 
+  <th>AMOUNT</th>
+  <th>ACCOUNT</th>
+  <th>DATE</th>
+  <th>CATEGORY</th>
+</tr>
+<tr *ngFor="let transaction of transactions"
+    class="w3-hover-green" ng-repeat="transaction in names">
     <td>{{transaction.id}}</td>
     <td>{{transaction.vendor}}</td> 
     <td>{{transaction.amount}}</td>
     <td>{{transaction.account}}</td>
     <td>{{transaction.transactiondate}}</td>
     <td>{{transaction.category}}</td>
-  </tr>
+</tr>
+
+
+
 </table>
+</div>
+
+   
