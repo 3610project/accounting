@@ -14,24 +14,40 @@ export class AddTransasctionComponent implements OnInit {
   selectedTransaction: ITransaction;
 
   inputid = new FormControl();
+  inputdate = new FormControl();
+  inputaccount = new FormControl();
+  inputcategory = new FormControl();
+  inputvendor = new FormControl();
+  inputamount = new FormControl();
 
   constructor(private _transactionsService: TransactionsService) {
 
    }
 
   ngOnInit() {
+    document.getElementById("SuccessLabel").style.visibility = "hidden";
   }
 
 
 
   AddTransaction() {
     
-    var date = new Date(2018,4,1);
+    var mydate = new Date();
     var myid : number;
+    var myvendor : string;
+    var myamount : number;
+    var mycategory : string;
+    var myaccount : string;
     myid = this.inputid.value;
-    const newTransaction : ITransaction = {id: myid, vendor: "Test", amount: 0, category: "Test", transactionDate: date, account: "Test"};
+    mydate = this.inputdate.value;
+    myvendor = this.inputvendor.value;
+    myamount = this.inputamount.value;
+    mycategory = this.inputcategory.value;
+    myaccount = this.inputaccount.value;
+    const newTransaction : ITransaction = {id: myid, vendor: myvendor, amount: myamount, category: mycategory, transactionDate: mydate, account: myaccount};
     this._transactionsService.postTransaction(newTransaction)
     .subscribe(transaction => this.transactions.push(newTransaction));
+    document.getElementById("SuccessLabel").style.visibility = "visible";
   }
 
 }
