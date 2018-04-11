@@ -13,13 +13,9 @@ export class TransactionsService {
   getTransactions(): Observable<ITransaction[]> {
     return this._http.get<ITransaction[]>(this.transactionsUrl);
   }
-  deleteTransactions(transaction:ITransaction): Observable<ITransaction[]> {
-    return this._http.delete<ITransaction[]>(this.transactionsUrl);
-}
-  
 
-
-
-
+  postTransaction(transaction : ITransaction): Observable<ITransaction[]> {
+    return this._http.post<ITransaction[]>(this.transactionsUrl, transaction);
+  }
 
 }

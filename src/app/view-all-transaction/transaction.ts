@@ -3,6 +3,6 @@ export interface ITransaction {
     vendor: string;
     amount: number;
     category: string;
-    transactiondate: Date;
+    transactionDate: Date;
     account: string;
 }
