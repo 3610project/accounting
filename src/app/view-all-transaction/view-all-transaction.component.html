@@ -13,8 +13,7 @@
   <th>DATE</th>
   <th>CATEGORY</th>
 </tr>
-<tr *ngFor="let transaction of transactions"
-    class="w3-hover-green" ng-repeat="transaction in names">
+<tr *ngFor="let transaction of transactions" class="w3-hover-green">
     <td>{{transaction.id}}</td>
     <td>{{transaction.vendor}}</td> 
     <td>{{transaction.amount}}</td>
