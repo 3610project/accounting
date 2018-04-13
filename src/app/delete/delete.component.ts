@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ITransaction } from '../view-all-transaction/transaction';
+import { TransactionsService } from '../view-all-transaction/transaction.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  transactions: ITransaction[] = [];
+  selectedTransaction: ITransaction;
+
+  inputid = new FormControl();
+
+  constructor(private _transactionsService: TransactionsService) { }
 
   ngOnInit() {
+    document.getElementById("SuccessLabel").style.visibility = "hidden";
+  }
+
+  DeleteTransaction() {
+    var myid : number;
+    myid = this.inputid.value;
+    this._transactionsService.deleteTransaction(myid).subscribe();
+    document.getElementById("SuccessLabel").style.visibility = "visible";
   }
 
 }
