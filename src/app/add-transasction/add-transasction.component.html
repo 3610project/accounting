@@ -3,10 +3,10 @@
 <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">  
 <h2>Add a Transaction</h2></div>
 
-<div>
+<div class="container">
     <form action="/action_page.php">
-<h3>Id: </h3><input type="number" [formControl]= "inputid" placeholder="Your name..">
-<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"placeholder="Your name..">
+<h3>Id: </h3><input type="number" [formControl]= "inputid" placeholder="Transaction ID">
+<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"placeholder="fffff">
 <h3>Amount: </h3><input type="number" [formControl]="inputamount"placeholder="Your name..">
 <h3>Category: </h3><input type="text" [formControl]="inputcategory"placeholder="Your name..">
 <h3>Transaction Date: </h3><input type="date" [formControl]="inputdate"placeholder="Your name..">
@@ -17,7 +17,7 @@
 </div>
 
   <style>
-  input[type=text]{
+  input[type=text],input[type=number],input[type=date]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -26,24 +26,7 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
-input[type=number]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
 
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-input[type=date]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 button {
     width: 100%;
     background-color: #4CAF50;
@@ -62,7 +45,10 @@ form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+   
 }
-
+.container {
+    padding: 16px 300px;
+}
 
 </style>
