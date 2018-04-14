@@ -16,6 +16,7 @@ import { AddTransasctionComponent } from './add-transasction/add-transasction.co
 import { ViewAllTransactionComponent } from './view-all-transaction/view-all-transaction.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UpdateComponent } from './update/update.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -33,6 +34,7 @@ import { UpdateComponent } from './update/update.component';
     ViewAllTransactionComponent,
     DeleteComponent,
     UpdateComponent,
+    DashboardComponent,
    
   ],
   imports: [

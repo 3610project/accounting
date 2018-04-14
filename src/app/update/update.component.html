@@ -1,7 +1,15 @@
 <div class="w3-panel"></div>
 <div class="w3-panel"></div>
 <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">  
-<h2>Login</h2></div>
-<h3>Username: </h3><input type="text" name="uname">
-<h3>Password: </h3><input type="text" name="pname">
-<a routerLink="/view"><button type="button">Log in</button></a>
+<h2>Update A Transaction</h2></div>
+<h3>Id: </h3><input type="number" [formControl]= "inputid">
+<button type="button" (click)="GetTransaction()">Get Transaction</button>
+<form id="myform" style="visibility:hidden">
+<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"> <span ng-bind="transaction.vendor"></span>
+<h3>Amount: </h3><input type="number" [formControl]="inputamount"> 
+<h3>Category: </h3><input type="text" [formControl]="inputcategory">
+<h3>Transaction Date: </h3><input type="date" [formControl]="inputdate">
+<h3>Account: </h3><input type="text" [formControl]="inputaccount">
+<button type="button" (click)="DeleteTransaction()">Delete Transaction</button>
+</form>
+<label id="SuccessLabel" style="visibility:hidden">Success!!!!!!</label>
