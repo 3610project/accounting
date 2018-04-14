@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ITransaction } from '../view-all-transaction/transaction';
+import { TransactionsService } from '../view-all-transaction/transaction.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  transactions: ITransaction[] = [];
+  selectedTransaction: ITransaction;
 
-  ngOnInit() {
+
+  constructor(private _transactionsService: TransactionsService) {
+
+   }
+   ngOnInit(){
+    this._transactionsService.getTransactions().subscribe(transactions => {
+      this.transactions = transactions;
+    },
+      error => console.log(error)
+    );
   }
 
-}
+  onSelect(transaction: ITransaction): void {
+    this.selectedTransaction = transaction;
+  }
+
+  delete(transaction: ITransaction):void {
+    this._transactionsService.deleteTransaction(transaction);
+
+  }
+
+
+ }
+ 
+
+  
+
+
+

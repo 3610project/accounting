@@ -1,6 +1,12 @@
-<h1>Update a Transaction</h1>
-<h2>Id: </h2><input type="text" name="idname">
-<h2>Amount: </h2><input type="text" name="amountname">
-<h2>Update Date: </h2><input type="text" name="transactiondatename">
-<h2>Amount: </h2><input type="text" name="amountname">
-<button type="button">Update</button>
+<div class="w3-panel"></div>
+<div class="w3-panel"></div>
+<div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">  
+<h2>Add a Transaction</h2></div>
+<h3>Id: </h3><input type="number" [formControl]="inputid">
+<h3>Vendor: </h3><input type="text" [formControl]="inputvendor">
+<h3>Amount: </h3><input type="number" [formControl]="inputamount">
+<h3>Category: </h3><input type="text" [formControl]="inputcategory">
+<h3>Transaction Date: </h3><input type="date" [formControl]="inputdate">
+<h3>Account: </h3><input type="text" [formControl]="inputaccount">
+<button type="button" (click)="AddTransaction()">Add</button>
+<label id="SuccessLabel" style="visibility:hidden">Success!!!!!!</label>

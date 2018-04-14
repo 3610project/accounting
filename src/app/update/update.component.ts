@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ITransaction } from '../view-all-transaction/transaction';
+import { TransactionsService } from '../view-all-transaction/transaction.service';
 
 @Component({
   selector: 'app-update',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor() {
+
+   }
 
   ngOnInit() {
+
   }
 
+
+
+  
+
 }
+

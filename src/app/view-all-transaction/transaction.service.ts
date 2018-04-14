@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ITransaction } from './transaction';
+import { of } from 'rxjs/observable/of';
+
 
 @Injectable()
 export class TransactionsService {
@@ -18,4 +20,12 @@ export class TransactionsService {
     return this._http.post<ITransaction[]>(this.transactionsUrl, transaction);
   }
 
+
+
+  deleteTransaction(transaction : ITransaction|number):Observable<ITransaction[]>{
+   
+    return this._http.delete<ITransaction[]>(this.transactionsUrl);
+    
+   
+  }
 }
