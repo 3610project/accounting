@@ -4,5 +4,13 @@
     <h1>Dashboard</h1>
 </div>
 
-<h1>total number of transactions: {{transactions.length}}</h1>
-<h1>total amount: </h1><input type="text" value='{{ getTotal() }}' />
+<h1>Total's Date: {{ getTodayDate() | date:'yyyy-MM-dd' }}</h1>
+
+<h1>Total Number of Transactions: {{transactions.length}}</h1>
+<h1>Total Amount of All Transactions: {{ getTotal() | number:0 }}</h1>
+<h1>****By Category****</h1>
+<h1>Category FOOD: {{ getFoodTotal() | number:0 }}</h1>
+<h1>Category GROCERY: {{ getGroceryTotal() | number:0 }}</h1>
+<h1>Category MERCHANDISE: {{ getMerchandiseTotal() | number:0 }}</h1>
+<h1>Category TUITION: {{ getTuitionTotal() | number:0 }}</h1>
+<h1>Category OTHER: {{ getOtherTotal() | number:0 }}</h1>

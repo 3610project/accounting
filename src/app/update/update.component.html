@@ -5,11 +5,11 @@
 <h3>Id: </h3><input type="number" [formControl]= "inputid">
 <button type="button" (click)="GetTransaction()">Get Transaction</button>
 <form id="myform" style="visibility:hidden">
-<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"> <span ng-bind="transaction.vendor"></span>
-<h3>Amount: </h3><input type="number" [formControl]="inputamount"> 
-<h3>Category: </h3><input type="text" [formControl]="inputcategory">
-<h3>Transaction Date: </h3><input type="date" [formControl]="inputdate">
-<h3>Account: </h3><input type="text" [formControl]="inputaccount">
-<button type="button" (click)="DeleteTransaction()">Delete Transaction</button>
+<h3>Vendor: {{transaction.vendor | uppercase}}</h3><input type="text" [formControl]="inputvendor">
+<h3>Amount: {{transaction.amount}}</h3><input type="number" [formControl]="inputamount"> 
+<h3>Category: {{transaction.category | uppercase}}</h3><input type="text" [formControl]="inputcategory">
+<h3>Transaction Date: {{transaction.transactionDate | date:'yyyy-MM-dd'}}</h3><input type="date" [formControl]="inputdate">
+<h3>Account: {{transaction.account | uppercase}}</h3><input type="text" [formControl]="inputaccount">
+<button type="button" (click)="UpdateTransaction()">Update Transaction</button>
 </form>
 <label id="SuccessLabel" style="visibility:hidden">Success!!!!!!</label>

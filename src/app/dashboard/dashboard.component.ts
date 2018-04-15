@@ -28,13 +28,69 @@ export class DashboardComponent implements OnInit {
   }
 
   getTotal() {
-    let total = 0;
+    var total : number;
+    total = 0;
     for (var i = 0; i < this.transactions.length; i++) {
         if (this.transactions[i].amount) {
             total += this.transactions[i].amount;
         }
     }
     return total;
-}
+  }
+
+  getTodayDate() {
+    var today = new Date;
+    return today;
+  }
+
+  getFoodTotal() {
+    var total : number;
+    total = 0;
+    for (var i = 0; i < this.transactions.length; i++) {
+      if (this.transactions[i].category.toUpperCase() === "FOOD") {
+          total += this.transactions[i].amount;
+      }
+    }
+    return total;
+  }
+
+  getGroceryTotal() {
+    var total : number;
+    total = 0;
+    for (var i = 0; i < this.transactions.length; i++) {
+      if (this.transactions[i].category.toUpperCase() === "GROCERY") {
+          total += this.transactions[i].amount;
+      }
+    }
+    return total;
+  }
+
+  getMerchandiseTotal() {
+    var total : number;
+    total = 0;
+    for (var i = 0; i < this.transactions.length; i++) {
+      if (this.transactions[i].category.toUpperCase() === "MERCHANDISE") {
+          total += this.transactions[i].amount;
+      }
+    }
+    return total;
+  }
+
+  getTuitionTotal() {
+    var total : number;
+    total = 0;
+    for (var i = 0; i < this.transactions.length; i++) {
+      if (this.transactions[i].category.toUpperCase() === "TUITION") {
+          total += this.transactions[i].amount;
+      }
+    }
+    return total;
+  }
+
+  getOtherTotal() {
+      let total = 0;
+      total = this.getTotal() - this.getFoodTotal() - this.getMerchandiseTotal() - this.getGroceryTotal() - this.getTuitionTotal();
+    return total;
+  }
 
 }
