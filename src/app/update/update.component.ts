@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
 
   transactions: ITransaction[] = [];
   selectedTransaction: ITransaction;
-  transaction: ITransaction[];
+  transaction: ITransaction;
 
   inputid = new FormControl();
   inputdate = new FormControl();
@@ -35,8 +35,27 @@ export class UpdateComponent implements OnInit {
 
     myid = this.inputid.value;
 
-    this._transactionsService.getTransaction(myid).subscribe();
+    this._transactionsService.getTransaction(myid).subscribe(transaction => this.transaction = transaction);
     document.getElementById("myform").style.visibility = "visible";
+
+  }
+
+  UpdateTransaction() {
+    var mydate = new Date();
+    var myid : number;
+    var myvendor : string;
+    var myamount : number;
+    var mycategory : string;
+    var myaccount : string;
+    myid = this.inputid.value;
+    mydate = this.inputdate.value;
+    myvendor = this.inputvendor.value;
+    myamount = this.inputamount.value;
+    mycategory = this.inputcategory.value;
+    myaccount = this.inputaccount.value;
+    const newTransaction : ITransaction = {id: myid, vendor: myvendor, amount: myamount, category: mycategory, transactionDate: mydate, account: myaccount};
+    this._transactionsService.putTransaction(newTransaction).subscribe();
+    document.getElementById("SuccessLabel").style.visibility = "visible";
 
   }
 

@@ -24,6 +24,10 @@ export class TransactionsService {
     return this._http.post<ITransaction[]>(this.transactionsUrl, transaction);
   }
 
+  putTransaction(transaction : ITransaction): Observable<ITransaction> {
+    return this._http.put<ITransaction>(this.transactionsUrl, transaction);
+  }
+
   deleteTransaction(id : number): Observable<ITransaction[]> {
     var mystring = id.toString();
     return this._http.delete<ITransaction[]>(this.transactionsUrl + "/" + mystring);
