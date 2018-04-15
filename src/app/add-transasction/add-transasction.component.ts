@@ -26,9 +26,23 @@ export class AddTransasctionComponent implements OnInit {
 
   ngOnInit() {
     document.getElementById("SuccessLabel").style.visibility = "hidden";
+    this._transactionsService.getTransactions().subscribe(transactions => {
+      this.transactions = transactions;
+
+      transactions.sort(function(a, b){
+        return a.id-b.id
+    })
+
+    },
+      error => console.log(error)
+    );
   }
 
-
+  GetLength() {
+    let mylength = 0;
+    mylength = this.transactions.length + 1;
+    return mylength;
+  }
 
   AddTransaction() {
     
