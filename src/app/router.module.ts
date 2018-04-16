@@ -7,6 +7,7 @@ import { AddTransasctionComponent } from './add-transasction/add-transasction.co
 import { ViewAllTransactionComponent } from './view-all-transaction/view-all-transaction.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UpdateComponent } from './update/update.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'delete', component: DeleteComponent },
   { path: 'update', component: UpdateComponent},
+  { path: 'dashboard', component: DashboardComponent},
 
   { path: '**', component: NotFoundComponent },
 ];
