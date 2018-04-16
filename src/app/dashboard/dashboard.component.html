@@ -9,7 +9,7 @@
 <h3>Today's Date: <i class="w3-text-indigo"> {{ getTodayDate() | date:'yyyy-MM-dd' }}</i></h3>
 
 <h3>Number of Transactions: <i class="w3-text-indigo">{{transactions.length}}</i></h3>
-<h3>Amount of All Transactions: <i class="w3-text-indigo">{{ getTotal() | number:0 }}</i></h3>
+<h3>Amount of All Transactions: <i class="w3-text-indigo">{{ getTotal() | currency }}</i></h3>
 
 
 <div class=" w3-blue w3-center w3-xlarge" >By Category
@@ -29,11 +29,11 @@
     
     
         
-        <tr><td>FOOD</td><td> {{ getFoodTotal() | number:0 }}</td></tr>
-        <tr><td>GROCERY</td><td>{{ getGroceryTotal() | number:0 }}</td></tr>
-        <tr><td>MERCHANDISE</td><td>{{ getMerchandiseTotal() | number:0 }}</td></tr>
-        <tr><td>TUITION</td><td>{{ getTuitionTotal() | number:0 }}</td></tr>
-        <tr><td>OTHER</td><td>{{ getOtherTotal() | number:0 }}</td></tr>
+        <tr><td>FOOD</td><td> {{ getFoodTotal() | currency }}</td></tr>
+        <tr><td>GROCERY</td><td>{{ getGroceryTotal() | currency }}</td></tr>
+        <tr><td>MERCHANDISE</td><td>{{ getMerchandiseTotal() | currency }}</td></tr>
+        <tr><td>TUITION</td><td>{{ getTuitionTotal() | currency }}</td></tr>
+        <tr><td>OTHER</td><td>{{ getOtherTotal() | currency }}</td></tr>
     
 </table>
 
