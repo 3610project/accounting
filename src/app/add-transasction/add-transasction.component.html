@@ -6,11 +6,11 @@
 <div class="container">
     <form action="/action_page.php">
 <h3>Id: </h3><input type="number" [formControl]= "inputid" placeholder="Transaction ID" value="{{GetLength()}}">
-<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"placeholder="fffff">
-<h3>Amount: </h3><input type="number" [formControl]="inputamount"placeholder="Your name..">
-<h3>Category: </h3><input type="text" [formControl]="inputcategory"placeholder="Your name..">
-<h3>Transaction Date: </h3><input type="date" [formControl]="inputdate"placeholder="Your name..">
-<h3>Account: </h3><input type="text" [formControl]="inputaccount"placeholder="Your name..">
+<h3>Vendor: </h3><input type="text" [formControl]="inputvendor"placeholder="Vendor Name">
+<h3>Amount: </h3><input type="number" [formControl]="inputamount"placeholder="Your Amount">
+<h3>Category: </h3><input type="text" [formControl]="inputcategory"placeholder="Your Category">
+<h3>Transaction Date: </h3><input type="date" [formControl]="inputdate"placeholder="Your Transaction Date">
+<h3>Account: </h3><input type="text" [formControl]="inputaccount"placeholder="Your Account">
 <button type="button" (click)="AddTransaction()">Add</button>
 <label id="SuccessLabel" style="visibility:hidden">Success!!!!!!</label>
 </form>
