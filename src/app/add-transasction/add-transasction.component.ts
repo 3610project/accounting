@@ -52,7 +52,14 @@ export class AddTransasctionComponent implements OnInit {
     var myamount : number;
     var mycategory : string;
     var myaccount : string;
-    myid = this.inputid.value;
+
+    if(this.inputid.value != null) {
+      myid = this.inputid.value;
+    }
+    else {
+      myid =this.GetLength();
+    }
+
     mydate = this.inputdate.value;
     myvendor = this.inputvendor.value;
     myamount = this.inputamount.value;
