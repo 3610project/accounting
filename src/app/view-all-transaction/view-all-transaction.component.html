@@ -13,14 +13,13 @@
   <th>DATE</th>
   <th>CATEGORY</th>
 </tr>
-<tr *ngFor="let transaction of transactions"
-    class="w3-hover-green" ng-repeat="transaction in names">
+<tr *ngFor="let transaction of transactions" class="w3-hover-green">
     <td>{{transaction.id}}</td>
-    <td>{{transaction.vendor}}</td> 
-    <td>{{transaction.amount}}</td>
-    <td>{{transaction.account}}</td>
-    <td>{{transaction.transactionDate}}</td>
-    <td>{{transaction.category}}</td>
+    <td>{{transaction.vendor | uppercase}}</td> 
+    <td>{{transaction.amount | currency}}</td>
+    <td>{{transaction.account | uppercase}}</td>
+    <td>{{transaction.transactionDate | date:'yyyy-MM-dd'}}</td>
+    <td>{{transaction.category | uppercase}}</td>
 </tr>
 
 

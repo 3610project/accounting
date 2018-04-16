@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITransaction } from '../view-all-transaction/transaction';
 import { TransactionsService } from '../view-all-transaction/transaction.service';
+import { Pipe, PipeTransform }   from '@angular/core';
 
 @Component({
   selector: 'app-view-all-transaction',
@@ -17,6 +18,11 @@ export class ViewAllTransactionComponent implements OnInit {
   ngOnInit(){
     this._transactionsService.getTransactions().subscribe(transactions => {
       this.transactions = transactions;
+
+      transactions.sort(function(a, b){
+        return a.id-b.id
+    })
+
     },
       error => console.log(error)
     );
@@ -26,4 +32,8 @@ export class ViewAllTransactionComponent implements OnInit {
     this.selectedTransaction = transaction;
   }
 
+
+
 }
+
+
