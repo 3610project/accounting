@@ -1,16 +1,52 @@
 <div class="w3-panel"></div>
 <div class="w3-panel"></div>
 <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">  
-    <h1>Dashboard</h1>
+    <h2>Dashboard</h2>
 </div>
 
-<h1>Total's Date: {{ getTodayDate() | date:'yyyy-MM-dd' }}</h1>
+<div class="container">
+    <form action="/action_page.php">
+<h3>Today's Date: <i class="w3-text-indigo"> {{ getTodayDate() | date:'yyyy-MM-dd' }}</i></h3>
 
-<h1>Total Number of Transactions: {{transactions.length}}</h1>
-<h1>Total Amount of All Transactions: {{ getTotal() | number:0 }}</h1>
-<h1>****By Category****</h1>
-<h1>Category FOOD: {{ getFoodTotal() | number:0 }}</h1>
-<h1>Category GROCERY: {{ getGroceryTotal() | number:0 }}</h1>
-<h1>Category MERCHANDISE: {{ getMerchandiseTotal() | number:0 }}</h1>
-<h1>Category TUITION: {{ getTuitionTotal() | number:0 }}</h1>
-<h1>Category OTHER: {{ getOtherTotal() | number:0 }}</h1>
+<h3>Number of Transactions: <i class="w3-text-indigo">{{transactions.length}}</i></h3>
+<h3>Amount of All Transactions: <i class="w3-text-indigo">{{ getTotal() | number:0 }}</i></h3>
+
+
+<div class=" w3-blue w3-center w3-xlarge" >By Category
+                      
+    </div>
+
+
+
+    
+     
+    
+    <table class="w3-table-all" >
+            
+                   
+                  
+   
+    
+    
+        
+        <tr><td>FOOD</td><td> {{ getFoodTotal() | number:0 }}</td></tr>
+        <tr><td>GROCERY</td><td>{{ getGroceryTotal() | number:0 }}</td></tr>
+        <tr><td>MERCHANDISE</td><td>{{ getMerchandiseTotal() | number:0 }}</td></tr>
+        <tr><td>TUITION</td><td>{{ getTuitionTotal() | number:0 }}</td></tr>
+        <tr><td>OTHER</td><td>{{ getOtherTotal() | number:0 }}</td></tr>
+    
+</table>
+
+</form>
+</div>
+<style>
+    form {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+     
+  }
+  .container {
+      padding: 16px 200px;
+  }
+</style>
